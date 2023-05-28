@@ -20,7 +20,7 @@ def enter_user_item():
 
         return enter_user_item()
     except ValueError:
-        enter_user_item()
+        return enter_user_item()
 
 
 def who_win(user_key: int, computer_key: int):

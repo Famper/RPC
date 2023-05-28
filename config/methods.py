@@ -9,13 +9,17 @@ def computer_generate():
 def enter_user_item():
     try:
         user_item = int(input('Введи цифру, которая означает один из 3-х предметов.'
-                              '\n\n0: Камень\n1: Ножницы\n2: Бумага\n\n'
+                              '\n\n0: Камень\n1: Ножницы\n2: Бумага\n-1: Выйти\n'
                               '\n[USER]: '))
+
+        if user_item == -1:
+            exit(0)
 
         if RPC_items[user_item]:
             return user_item
+
         return enter_user_item()
-    except TypeError:
+    except ValueError:
         enter_user_item()
 
 
